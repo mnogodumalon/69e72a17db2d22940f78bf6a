@@ -177,7 +177,31 @@ export default function DashboardOverview() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-4 min-h-0" style={{ height: 'calc(100vh - 72px)' }}>
+    <div className="flex flex-col gap-4">
+    {/* Workflow-Navigation */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <a href="#/intents/jahresabschluss-erfassen" className="group flex items-center gap-4 bg-card border border-border border-l-4 border-l-primary rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+          <IconScale size={20} className="text-primary" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="font-semibold text-sm text-foreground truncate">Jahresabschluss erfassen</p>
+          <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">Bilanz und GuV für ein Unternehmen in einem geführten Workflow erfassen</p>
+        </div>
+        <IconChevronRight size={18} className="text-muted-foreground shrink-0 group-hover:text-foreground transition-colors" />
+      </a>
+      <a href="#/intents/unternehmen-analysieren" className="group flex items-center gap-4 bg-card border border-border border-l-4 border-l-primary rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+          <IconShield size={20} className="text-primary" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="font-semibold text-sm text-foreground truncate">Unternehmen analysieren</p>
+          <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">Vollständige Bonitäts- und Kennzahlenanalyse durchführen und bewerten</p>
+        </div>
+        <IconChevronRight size={18} className="text-muted-foreground shrink-0 group-hover:text-foreground transition-colors" />
+      </a>
+    </div>
+    <div className="flex flex-col lg:flex-row gap-4 min-h-0" style={{ height: 'calc(100vh - 144px)' }}>
       {/* LEFT PANEL: Company list */}
       <div className="lg:w-72 xl:w-80 shrink-0 flex flex-col gap-3 overflow-hidden">
         {/* Header */}
@@ -647,6 +671,7 @@ export default function DashboardOverview() {
         onConfirm={handleDeleteKz}
         onClose={() => setDeleteKz(null)}
       />
+    </div>
     </div>
   );
 }
